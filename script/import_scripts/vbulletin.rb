@@ -410,8 +410,8 @@ EOM
 
   # find the uploaded file information from the db
   def find_upload(post, attachment_id)
-    sql = "SELECT a.attachmentid attachment_id, a.userid user_id, a.filedataid file_id, a.filename filename,
-                  filesize AS dbsize, filedata, a.caption caption
+    sql = "SELECT a.attachmentid attachment_id, a.userid user_id, a.attachmentid file_id, a.filename filename,
+                  filesize AS dbsize, filedata, a.filename caption
              FROM #{TABLE_PREFIX}attachment a
             WHERE a.attachmentid = #{attachment_id}"
     results = mysql_query(sql)
